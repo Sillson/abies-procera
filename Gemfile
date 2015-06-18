@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Additions 
+gem 'activeadmin', github: 'activeadmin'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'devise'

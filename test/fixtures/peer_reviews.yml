@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  submitter: MyString
+  owner: MyString
+  external_link: MyString
+  loc_count: 1
+
+two:
+  submitter: MyString
+  owner: MyString
+  external_link: MyString
+  loc_count: 1
