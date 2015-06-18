@@ -6,3 +6,23 @@
     .row
       %p
         Show all builders with current score, link to submit path, and instructions
+  .jumbotron
+    .row
+      .panel.panel-default
+        .panel-heading
+          %h3
+            WCS Peer Reviews
+          %p
+            name/location count/score
+        .panel-body
+          - @wcs.each do |u|
+            .col-md-6
+              .panel
+                %p
+                  = u.name
+            .col-md-4
+              .panel
+                %p
+                  = u.sum_user_locs(u.id)
+            
+ 
