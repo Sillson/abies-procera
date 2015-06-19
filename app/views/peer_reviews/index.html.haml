@@ -3,9 +3,15 @@
     .row
       %h2
         Peer Reviews
-    .row
-      %p
-        Show all builders with current score, link to submit path, and instructions
+    .col-md-10.text-center.col-md-offset-1
+      .row
+        %p
+          Need a peer review? Reach out to a teamate via Slack or in person. 
+        
+          Track your score to see how you are contributing compared to your teamates. Try to stay at 2 or above!
+        %h4
+          = link_to "Submit a Peer Review", pr_form_path, :remote => true
+  #prform
   .jumbotron
     .row
       .panel.panel-default
@@ -16,13 +22,18 @@
             name/location count/score
         .panel-body
           - @wcs.each do |u|
-            .col-md-6
+            .col-md-4
               .panel
                 %p
                   = u.name
             .col-md-4
               .panel
                 %p
-                  = u.sum_user_locs(u.id)
+                  = u.sum_user_locs
+            .col-md-4
+              .panel
+                %p
+                  = u.calculate_user_score(@pr_mean)
+
             
  

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :name, presence: true
+
   has_many :peer_reviews
 
   def sum_user_locs
@@ -30,4 +32,5 @@ class User < ActiveRecord::Base
   		end
   	end
   end
+
 end

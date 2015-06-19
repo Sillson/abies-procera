@@ -23,12 +23,11 @@
           = f.label :password_confirmation
           %br/
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm Password', class: 'form-control'  
-        .row
-          .col-md-6
-            %label.checkbox
-              %input{type: "checkbox"}/
-              
-              Montucky?
+        .col-md-6
+          %label.checkbox
+            %input{type: "checkbox"}/
+            
+            Montucky?
           .col-md-6
             = f.submit 'Sign Up', class: 'pull-right'
         %hr/
