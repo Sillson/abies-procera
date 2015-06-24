@@ -6,10 +6,12 @@ class PeerReviewsController < ApplicationController
 		@pr_mean = PeerReview.first.pr_mean
 	end
 
-	def show
+	def new
+		@peer_review = PeerReview.new
 	end
 
 	def pr_form
+		@peer_reviews = PeerReview.all
 		respond_to do |format|               
     		format.js
   		end  

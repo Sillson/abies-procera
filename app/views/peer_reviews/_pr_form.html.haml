@@ -5,3 +5,10 @@
         .panel-heading
           %h3
             Submission Form
+          .row
+            = form_tag url_for(:controller => 'peer_reviews', :action => 'index'), :method => 'get', :remote => true do
+              .container
+                %h5
+                  Assign the Peer Review
+                .row.input-group
+                  = collection_select(:user, :id, User.all, :id, :name)
