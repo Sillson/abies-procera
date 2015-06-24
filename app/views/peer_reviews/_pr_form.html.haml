@@ -6,9 +6,24 @@
           %h3
             Submission Form
           .row
-            = form_tag url_for(:controller => 'peer_reviews', :action => 'index'), :method => 'get', :remote => true do
+            = form_for @peer_review, url: {action: "create"} do |prform|
               .container
-                %h5
-                  Assign the Peer Review
-                .row.input-group
-                  = collection_select(:user, :id, User.all, :id, :name)
+                .reg-header
+                  %h4
+                    Assign the Peer Review
+                  %span.input-group
+                    %h5
+                      assign your pr to
+                      = prform.select(:user_id, options_for_select(@user_options))
+                  %span.input-group
+                    = prform.hidden_field :submitter_id
+                  %span.input-group
+                    %h5
+                      number of locations
+                      = prform.number_field :loc_count
+                  %span.input-group
+                    %h5
+                      external link
+                      = prform.text_field :external_link
+                  %span
+                    = prform.submit 'Submit'

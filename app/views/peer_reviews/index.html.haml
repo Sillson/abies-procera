@@ -10,7 +10,7 @@
         
           Track your score to see how you are contributing compared to your teamates. Try to stay at 2 or above!
         %h4
-          = link_to "Submit a Peer Review", pr_form_path, :remote => true
+          = link_to "Submit a Peer Review", pr_form_path, :remote => true, :id => 'submit-again'
   #prform
   .jumbotron
     .row
@@ -34,6 +34,7 @@
               .panel
                 %p
                   = u.calculate_user_score(@pr_mean)
+
 
             
  

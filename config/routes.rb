@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'gc-api', to: 'gc_api#index'
   get 'project-overview', to: 'gc_api#show' 
 
-  resources :peer_reviews, only: [:index, :show, :create, :new]
+  resources :peer_reviews, only: [:index, :show, :create]
   get 'pr-form', to: 'peer_reviews#pr_form'
 
   
